@@ -9,7 +9,7 @@ const ensureRealEstateExistsMiddleware = async (
   req: Request,
   res: Response,
   next: NextFunction
-): Promise<Response | void> => {
+): Promise<void> => {
   const scheduleData: IScheduleRequest = req.body;
 
   const realEstateRespository: Repository<RealEstate> =

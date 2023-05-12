@@ -9,8 +9,6 @@ const listRealEstateSchedulesService = async (
 ): Promise<RealEstate> => {
   const realEstateRepository: Repository<RealEstate> =
     AppDataSource.getRepository(RealEstate);
-  const scheduleRepository: Repository<Schedule> =
-    AppDataSource.getRepository(Schedule);
 
   const realEstate: RealEstate | null = await realEstateRepository
     .createQueryBuilder("realEstate")

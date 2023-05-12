@@ -9,8 +9,6 @@ const listRealEstateCategoriesService = async (
 ): Promise<ICategory> => {
   const categoryRepository: Repository<Category> =
     AppDataSource.getRepository(Category);
-  const realEstateRepository: Repository<RealEstate> =
-    AppDataSource.getRepository(RealEstate);
 
   const category: Category | null = await categoryRepository.findOne({
     where: {

@@ -8,7 +8,7 @@ const ensureUserExistsMiddleware = async (
   req: Request,
   res: Response,
   next: NextFunction
-): Promise<Response | void> => {
+): Promise<void> => {
   const userId: number = parseInt(req.params.id);
 
   const userRepository: Repository<User> = AppDataSource.getRepository(User);

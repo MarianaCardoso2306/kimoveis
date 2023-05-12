@@ -1,11 +1,11 @@
 import { NextFunction, Request, Response } from "express";
 import { AppError } from "../../error";
 
-const ensureUserIsAdminMiddleware = async (
+const ensureUserIsAdminMiddleware = (
   req: Request,
   res: Response,
   next: NextFunction
-): Promise<Response | void> => {
+): void => {
   const { admin } = res.locals;
 
   if (!admin) {

@@ -1,11 +1,11 @@
 import { NextFunction, Request, Response } from "express";
 import { AppError } from "../../error";
 
-const ensureUserIsAdminForPatchMiddleware = async (
+const ensureUserIsAdminForPatchMiddleware = (
   req: Request,
   res: Response,
   next: NextFunction
-): Promise<Response | void> => {
+): void => {
   const { admin } = res.locals;
   const { userId } = res.locals;
   const idReq = req.params.id;
