@@ -7,7 +7,7 @@ const ensureTokenIsValidMiddleware = (
   req: Request,
   res: Response,
   next: NextFunction
-) => {
+): void => {
   let token: string | undefined = req.headers.authorization;
 
   if (!token) {

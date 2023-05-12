@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import { ILoginRequest } from "../interfaces/login.interfaces";
-import createSessionService from "../services/login/createSessionService";
+import createSessionService from "../services/login/createSession.service";
 
 const createSessionController = async (
   req: Request,

@@ -8,7 +8,7 @@ const ensureEmailAlreadyExisteMiddleware = async (
   req: Request,
   res: Response,
   next: NextFunction
-) => {
+): Promise<Response | void> => {
   const userEmail: string = req.body.email;
 
   const userRepository: Repository<User> = AppDataSource.getRepository(User);

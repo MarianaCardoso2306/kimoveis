@@ -8,7 +8,7 @@ const ensureCategoryNameAlreadyExistsMiddleware = async (
   req: Request,
   res: Response,
   next: NextFunction
-) => {
+): Promise<Response | void> => {
   const categoryName = req.body.name;
 
   const categorRepository: Repository<Category> =

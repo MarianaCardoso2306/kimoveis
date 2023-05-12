@@ -1,32 +1,10 @@
 import { Repository } from "typeorm";
 import { RealEstate, Schedule, User } from "../../entities";
 import { AppDataSource } from "../../data-source";
-import {
-  isMonday,
-  isFriday,
-  isTuesday,
-  isWednesday,
-  isThursday,
-} from "date-fns";
 import { AppError } from "../../error";
 import { IScheduleRequest } from "../../interfaces/schedules.interfaces";
-
-const isBetween8AMand6PM = (hour: string): boolean => {
-  const hourNumber: number = parseInt(hour.substring(0, 2));
-  return hourNumber >= 8 && hourNumber <= 18;
-};
-
-const isValidDate = (dateString: string): boolean => {
-  const date: Date = new Date(dateString);
-  const dayOfWeek: number = date.getDay();
-  return (
-    isMonday(date) ||
-    isTuesday(date) ||
-    isWednesday(date) ||
-    isThursday(date) ||
-    isFriday(date)
-  );
-};
+import isBetween8AMand6PM from "../../utils/isBetween8AMand6PM";
+import isValidDate from "../../utils/isValidDate";
 
 const createSchedulesService = async (
   scheduleData: IScheduleRequest,
